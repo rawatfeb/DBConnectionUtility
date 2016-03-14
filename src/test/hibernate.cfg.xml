@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+<session-factory>
+<property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
+<property name="hibernate.connection.url">jdbc:derby://localhost:1527/DBcnectionUtilityDerbyDB;create=true</property>
+<property name="hibernate.connection.pool_size">15</property>
+<property name="show_sql">true</property>
+<!-- <property name="format_sql">true</property> -->
+<property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
+<property name="hibernate.current_session_context_class">thread</property>
+
+<!-- <property name="hibernate.hbm2ddl.auto">create</property> -->
+
+<mapping class="hibernate_tables.ServerPool" />
+<mapping class="hibernate_tables.ServerDomain" />
+<mapping class="hibernate_tables.JvmInfo" />
+<mapping class="hibernate_tables.ResourceInfo" />
+
+<mapping class="hibernate_tables.Parent" />
+<mapping class="hibernate_tables.Child" />
+
+
+</session-factory>
+</hibernate-configuration>
